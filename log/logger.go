@@ -7,7 +7,6 @@ import (
 
 	"github.com/lym331461029/base_lib/log/base"
 	"github.com/lym331461029/base_lib/log/logrus"
-	"github.com/lym331461029/base_lib/log/zap"
 )
 
 // DLogger 会返回一个新的默认日志记录器。
@@ -26,8 +25,8 @@ func LoggerByProjectName(loggerType base.LoggerType, projectName string) base.My
 	switch loggerType {
 	case base.LOGRUS:
 		logger = logrus.NewLogger(projectName)
-	case base.ZAP:
-		logger = zap.NewLogger(projectName)
+	//case base.ZAP:
+	//	logger = zap.NewLogger(projectName)
 	default:
 		errMsg := fmt.Sprintf("Unsupported logger type '%s'!\n", loggerType)
 		panic(errors.New(errMsg))

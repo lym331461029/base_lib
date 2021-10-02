@@ -1,10 +1,12 @@
 package zap
 
-import (
-	"testing"
+//import (
+//	"testing"
+//
+//	"github.com/lym331461029/base_lib/log/base/field"
+//)
 
-	"github.com/lym331461029/base_lib/log/base/field"
-)
+/*
 
 func TestZapLogger(t *testing.T) {
 	defer func() {
@@ -46,3 +48,4 @@ func TestZapLogger(t *testing.T) {
 	// logger.Panicf("%s log (zap)", "Panicf")
 	// logger.Panicln("Panicln log (zap)")
 }
+*/

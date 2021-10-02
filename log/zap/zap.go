@@ -1,5 +1,7 @@
 package zap // import "go.pkg.wesai.com/p/base_lib/log/zap"
 
+
+/*
 import (
 	"fmt"
 	"io"
@@ -190,3 +192,4 @@ func genMsg(format string, v ...interface{}) string {
 		return fmt.Sprint(v...)
 	}
 }
+*/
