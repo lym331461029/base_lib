@@ -1,4 +1,4 @@
-package log // import "go.pkg.wesai.com/p/base_lib/log"
+package log
 
 import (
 	"errors"

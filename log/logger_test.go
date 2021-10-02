@@ -3,7 +3,7 @@ package log
 import (
 	"testing"
 
-	"go.pkg.wesai.com/p/base_lib/log/base"
+	"github.com/lym331461029/base_lib/log/base"
 )
 
 func TestLogger(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/uber-go/zap"
+	"go.uber.org/zap"
 
 	"github.com/lym331461029/base_lib/log/base"
 	"github.com/lym331461029/base_lib/log/base/field"
