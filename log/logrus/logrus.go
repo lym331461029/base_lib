@@ -9,7 +9,7 @@ import (
 	"github.com/lym331461029/base_lib/log/base"
 	"github.com/lym331461029/base_lib/log/base/field"
 
-	"github.com/Sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 )
 
 func init() {
