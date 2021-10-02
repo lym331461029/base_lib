@@ -16,7 +16,7 @@ package main
 import (
 	"time"
 
-	"go.pkg.wesai.com/p/base_lib/log"
+	"github.com/lym331461029/base_lib/log"
 )
 
 func main() {

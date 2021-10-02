@@ -8,8 +8,8 @@ import (
 
 	"github.com/uber-go/zap"
 
-	"go.pkg.wesai.com/p/base_lib/log/base"
-	"go.pkg.wesai.com/p/base_lib/log/base/field"
+	"github.com/lym331461029/base_lib/log/base"
+	"github.com/lym331461029/base_lib/log/base/field"
 )
 
 func init() {

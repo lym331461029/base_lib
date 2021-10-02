@@ -3,7 +3,7 @@ package zap
 import (
 	"testing"
 
-	"go.pkg.wesai.com/p/base_lib/log/base/field"
+	"github.com/lym331461029/base_lib/log/base/field"
 )
 
 func TestZapLogger(t *testing.T) {
