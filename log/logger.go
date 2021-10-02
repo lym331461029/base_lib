@@ -3,6 +3,7 @@ package log
 import (
 	"errors"
 	"fmt"
+	"github.com/lym331461029/base_lib/log/zap"
 	"time"
 
 	"github.com/lym331461029/base_lib/log/base"
@@ -25,8 +26,8 @@ func LoggerByProjectName(loggerType base.LoggerType, projectName string) base.My
 	switch loggerType {
 	case base.LOGRUS:
 		logger = logrus.NewLogger(projectName)
-	//case base.ZAP:
-	//	logger = zap.NewLogger(projectName)
+	case base.ZAP:
+		logger = zap.NewLogger(projectName)
 	default:
 		errMsg := fmt.Sprintf("Unsupported logger type '%s'!\n", loggerType)
 		panic(errors.New(errMsg))
