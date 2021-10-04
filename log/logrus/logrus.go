@@ -35,7 +35,11 @@ func NewLoggerBy(projectName string, w io.Writer, l logrus.Level) base.MyLogger 
 
 func initInnerLogger(w io.Writer, l logrus.Level) *logrus.Entry {
 	innerLogger := logrus.New()
-	innerLogger.Formatter = &logrus.JSONFormatter{
+	//innerLogger.Formatter = &logrus.JSONFormatter{
+	//	TimestampFormat: base.TIMESTAMP_FORMAT,
+	//}
+
+	innerLogger.Formatter = &logrus.TextFormatter{
 		TimestampFormat: base.TIMESTAMP_FORMAT,
 	}
 	innerLogger.Level = l
