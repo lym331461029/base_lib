@@ -40,7 +40,7 @@ func loggerToFile(loggerType base.LoggerType, projectName string, dirPath string
 	}
 	_, err := os.Stat(dirPath)
 	if err != nil {
-		if err == os.ErrNotExist {
+		if errors.Is(err, os.ErrNotExist) {
 			err = os.Mkdir(dirPath, os.ModePerm)
 			if err != nil {
 				return nil, err
@@ -52,7 +52,7 @@ func loggerToFile(loggerType base.LoggerType, projectName string, dirPath string
 
 	filePath := path.Join(dirPath, projectName+".%Y%m%d%H.log")
 
-	wlogs, err := rotatelogs.New(filePath, rotatelogs.WithRotationTime(time.Hour))
+	loggerWithRotate, err := rotatelogs.New(filePath, rotatelogs.WithRotationTime(time.Hour))
 	if err != nil {
 		return nil, err
 	}
@@ -60,9 +60,9 @@ func loggerToFile(loggerType base.LoggerType, projectName string, dirPath string
 	var logger base.MyLogger
 	switch loggerType {
 	case base.LOGRUS:
-		logger = logrus.NewLoggerBy(projectName, wlogs, rLogrus.DebugLevel)
+		logger = logrus.NewLoggerBy(projectName, loggerWithRotate, rLogrus.DebugLevel)
 	case base.ZAP:
-		logger = zap.NewLoggerBy(projectName, wlogs, rZapcore.DebugLevel)
+		logger = zap.NewLoggerBy(projectName, loggerWithRotate, rZapcore.DebugLevel)
 	default:
 		errMsg := fmt.Sprintf("Unsupported logger type '%s'!\n", loggerType)
 		panic(errors.New(errMsg))
